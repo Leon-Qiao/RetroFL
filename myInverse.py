@@ -109,7 +109,7 @@ mutex = threading.Lock()
 def findU(tName):
     global bestLoss
     global bestStructure
-    opt = tf.keras.optimizers.Adam(learning_rate=0.003)
+    opt = tf.keras.legacy.optimizers.Adam(learning_rate=0.003)
 #     start = np.random.uniform(low=0.0, high=1.0, size=(1, 10))
     start = np.expand_dims(A.data_loader.X[np.random.randint(0, A.data_loader.X.shape[0]),1:], axis = 0)
     structure = tf.Variable(start, dtype=tf.float32)
