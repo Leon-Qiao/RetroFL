@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 # from sklearn.preprocessing import MinMaxScaler
 import threading
 
-num_nodes = 1
+num_nodes = 2
 num_node_epochs = 500
 
 class DataLoader:
