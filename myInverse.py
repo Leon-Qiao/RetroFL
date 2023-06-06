@@ -140,8 +140,11 @@ def findU(tName):
         
         grads = tape.gradient(loss, structure)
         opt.apply_gradients(grads_and_vars=zip([grads], [structure]))
+
+
         for i in range(structure.shape[1]):
-            if structure[0][i].numpy() < 0:
+            # if structure[0][i].numpy() < 0:
+            if 1:
                 structure = tf.tensor_scatter_nd_update(structure, [[0, i]], [A.data_loader.X[np.random.randint(0, A.data_loader.X.shape[0]), i + 1]])
                 structure = tf.Variable(structure)
 
