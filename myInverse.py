@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 # from sklearn.preprocessing import MinMaxScaler
 import threading
 
-num_nodes = 2
+num_nodes = 500
 num_node_epochs = 500
 
 class DataLoader:
@@ -87,9 +87,9 @@ class Node:
 
 A = Node()
 
-A.train()
+# A.train()
 
-tf.saved_model.save(A.model, './models')
+# tf.saved_model.save(A.model, './models')
 
 A.model = tf.saved_model.load('./models')
 
@@ -122,8 +122,6 @@ def findU(tName):
     start = np.expand_dims(A.data_loader.X[np.random.randint(0, A.data_loader.X.shape[0]),1:], axis = 0)
     structure = tf.Variable(start, dtype=tf.float32)
     for j in range(num_node_epochs):
-        print("before train")
-        print(structure)
         with tf.GradientTape(watch_accessed_variables=False, persistent=True) as tape:
             tape.watch(structure)
             X1 = tf.concat([tf.constant([[2.4]]), structure], axis = 1)
@@ -149,14 +147,10 @@ def findU(tName):
             print()
         
         grads = tape.gradient(loss, structure)
-        print("grads")
-        print(grads)
         opt.apply_gradients(grads_and_vars=zip([grads], [structure]))
-
 
         for i in range(structure.shape[1]):
             if structure[0][i].numpy() < 0:
-                print('changed')
                 structure = tf.tensor_scatter_nd_update(structure, [[0, i]], [A.data_loader.X[np.random.randint(0, A.data_loader.X.shape[0]), i + 1]])
                 structure = tf.Variable(structure)
 
