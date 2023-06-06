@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 # from sklearn.preprocessing import MinMaxScaler
 import threading
 
-num_nodes = 500
+num_nodes = 1
 num_node_epochs = 500
 
 class DataLoader:
@@ -95,6 +95,7 @@ A.train()
 
 
 def obj_func(s_para):
+    print("s_para", s_para)
     E11 = s_para[0][0]**2 + s_para[0][1]**2
     E21 = s_para[0][2]**2 + s_para[0][3]**2
     E31 = s_para[0][4]**2 + s_para[0][5]**2
@@ -114,6 +115,8 @@ def findU(tName):
     start = np.expand_dims(A.data_loader.X[np.random.randint(0, A.data_loader.X.shape[0]),1:], axis = 0)
     structure = tf.Variable(start, dtype=tf.float32)
     for j in range(num_node_epochs):
+        print("before train")
+        print(structure)
         with tf.GradientTape(watch_accessed_variables=False, persistent=True) as tape:
             tape.watch(structure)
             X1 = tf.concat([tf.constant([[2.4]]), structure], axis = 1)
@@ -139,22 +142,27 @@ def findU(tName):
             print()
         
         grads = tape.gradient(loss, structure)
+        print("grads")
+        print(grads)
         opt.apply_gradients(grads_and_vars=zip([grads], [structure]))
 
 
         for i in range(structure.shape[1]):
             if structure[0][i].numpy() < 0:
+                print('changed')
                 structure = tf.tensor_scatter_nd_update(structure, [[0, i]], [A.data_loader.X[np.random.randint(0, A.data_loader.X.shape[0]), i + 1]])
                 structure = tf.Variable(structure)
 
-threadpool = []
-for i in range(num_nodes):
-    th = threading.Thread(target=findU, args=(i,))
-    threadpool.append(th)
+findU(0)
 
-for th in threadpool:
-    th.start()
-for th in threadpool:
-    threading.Thread.join(th)
+# threadpool = []
+# for i in range(num_nodes):
+#     th = threading.Thread(target=findU, args=(i,))
+#     threadpool.append(th)
+
+# for th in threadpool:
+#     th.start()
+# for th in threadpool:
+#     threading.Thread.join(th)
 
 
