@@ -155,16 +155,14 @@ def findU(tName):
                 structure = tf.tensor_scatter_nd_update(structure, [[0, i]], [A.data_loader.X[np.random.randint(0, A.data_loader.X.shape[0]), i + 1]])
                 structure = tf.Variable(structure)
 
-findU(0)
+threadpool = []
+for i in range(num_nodes):
+    th = threading.Thread(target=findU, args=(i,))
+    threadpool.append(th)
 
-# threadpool = []
-# for i in range(num_nodes):
-#     th = threading.Thread(target=findU, args=(i,))
-#     threadpool.append(th)
-
-# for th in threadpool:
-#     th.start()
-# for th in threadpool:
-#     threading.Thread.join(th)
+for th in threadpool:
+    th.start()
+for th in threadpool:
+    threading.Thread.join(th)
 
 
