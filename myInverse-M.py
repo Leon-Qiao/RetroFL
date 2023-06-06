@@ -54,7 +54,7 @@ model = MLP()
 data_loader = DataLoader()
 optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
 X_v, y_v = data_loader.get_batch(mode='validate')
-def train(self):
+def train():
     num_batch = data_loader.num_train // batch_size
     for epoch_index in range(num_epochs):
         for batch in range(num_batch):
