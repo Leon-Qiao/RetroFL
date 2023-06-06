@@ -89,6 +89,10 @@ A = Node()
 
 A.train()
 
+tf.saved_model.save(A.model, './models')
+
+A.model = tf.saved_model.load('./models')
+
 # A.model.save("model.keras")
 
 # y1 = [0.054, 0.229, 0.080, -0.711, -0.585, -0.085, -0.262, -0.073]
@@ -113,6 +117,7 @@ def findU(tName):
     global bestLoss
     global bestStructure
     opt = tf.keras.optimizers.legacy.Adam(learning_rate=0.003)
+    m = tf.saved_model.load('./models')
 #     start = np.random.uniform(low=0.0, high=1.0, size=(1, 10))
     start = np.expand_dims(A.data_loader.X[np.random.randint(0, A.data_loader.X.shape[0]),1:], axis = 0)
     structure = tf.Variable(start, dtype=tf.float32)
@@ -124,9 +129,9 @@ def findU(tName):
             X1 = tf.concat([tf.constant([[2.4]]), structure], axis = 1)
             X2 = tf.concat([tf.constant([[2.5]]), structure], axis = 1)
             X3 = tf.concat([tf.constant([[2.6]]), structure], axis = 1)
-            y1_pred = A.model(X1)
-            y2_pred = A.model(X2)
-            y3_pred = A.model(X3)
+            y1_pred = m(X1)
+            y2_pred = m(X2)
+            y3_pred = m(X3)
 #             mse1 = tf.reduce_mean(tf.square(y1_pred - y1))
 #             mse2 = tf.reduce_mean(tf.square(y2_pred - y2))
 #             mse3 = tf.reduce_mean(tf.square(y3_pred - y3))
