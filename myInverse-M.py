@@ -112,9 +112,9 @@ structure = tf.Variable(start, dtype=tf.float32)
 for i in range(num_node_epochs):
     with tf.GradientTape(watch_accessed_variables=False, persistent=True) as tape:
         tape.watch(structure)
-        X1 = tf.concat([tf.tile([[2.4]], [500, 1]), structure], axis=1)
-        X2 = tf.concat([tf.tile([[2.5]], [500, 1]), structure], axis=1)
-        X3 = tf.concat([tf.tile([[2.6]], [500, 1]), structure], axis=1)
+        X1 = tf.concat([tf.tile([[2.4]], [num_nodes, 1]), structure], axis=1)
+        X2 = tf.concat([tf.tile([[2.5]], [num_nodes, 1]), structure], axis=1)
+        X3 = tf.concat([tf.tile([[2.6]], [num_nodes, 1]), structure], axis=1)
         y1_pred = model(X1)
         y2_pred = model(X2)
         y3_pred = model(X3)
