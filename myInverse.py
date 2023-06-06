@@ -101,7 +101,6 @@ A.model = tf.saved_model.load('./models')
 
 
 def obj_func(s_para):
-    print("s_para", s_para)
     E11 = s_para[0][0]**2 + s_para[0][1]**2
     E21 = s_para[0][2]**2 + s_para[0][3]**2
     E31 = s_para[0][4]**2 + s_para[0][5]**2
