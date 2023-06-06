@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 # from sklearn.preprocessing import MinMaxScaler
 import threading
 
-num_nodes = 5
+num_nodes = 1
 num_node_epochs = 5
 
 class DataLoader:
@@ -144,7 +144,7 @@ def findU(tName):
 
         for i in range(structure.shape[1]):
             # if structure[0][i].numpy() < 0:
-            if 1:
+            if j % 2:
                 structure = tf.tensor_scatter_nd_update(structure, [[0, i]], [A.data_loader.X[np.random.randint(0, A.data_loader.X.shape[0]), i + 1]])
                 structure = tf.Variable(structure)
 
