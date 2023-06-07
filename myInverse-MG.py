@@ -147,10 +147,11 @@ for i in range(num_node_epochs):
         if t_min_loss1 < t_min_loss2:
             bestLoss = t_min_loss1
             bestStructure = structure1[tf.argmin(loss1)]
+            print(tf.argmin(loss1).numpy())
         else:
             bestLoss = t_min_loss2
             bestStructure = structure2[tf.argmin(loss2)]
-            print(tf.argmin(loss1).numpy())
+            print(tf.argmin(loss2).numpy())
         print(i, bestLoss)
         print(bestStructure)
         print()
