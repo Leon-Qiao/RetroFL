@@ -4,8 +4,9 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 # from sklearn.preprocessing import MinMaxScaler
 
-# gpus = tf.config.list_physical_devices(device_type = 'GPU')
-# tf.config.experimental.set_memory_growth(gpus[0], True)
+gpus = tf.config.list_physical_devices(device_type = 'GPU')
+tf.config.experimental.set_memory_growth(gpus[0], True)
+tf.config.experimental.set_memory_growth(gpus[1], True)
 
 num_nodes = 4096
 num_node_epochs = 50000
