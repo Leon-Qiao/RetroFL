@@ -8,8 +8,8 @@ gpus = tf.config.list_physical_devices(device_type = 'GPU')
 tf.config.experimental.set_memory_growth(gpus[0], True)
 tf.config.experimental.set_memory_growth(gpus[1], True)
 
-num_nodes = 4096
-num_node_epochs = 50000
+num_nodes = 10240
+num_node_epochs = 5000
 
 class DataLoader:
     def __init__(self):
