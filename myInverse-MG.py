@@ -106,7 +106,7 @@ def obj_func(s_para):
 bestLoss = 10
 bestStructure = []
 
-opt = tf.keras.optimizers.legacy.Adam(learning_rate=0.003)
+opt = tf.keras.optimizers.legacy.Adam(learning_rate=0.03)
 mmin = np.min(data_loader.X[: , 1: ], axis=0)
 mmax = np.max(data_loader.X[: , 1: ], axis=0)
 start = np.random.uniform(mmin, mmax, (num_nodes * 2, mmin.shape[0]))
@@ -146,11 +146,11 @@ for i in range(num_node_epochs):
     if np.min([t_min_loss1, t_min_loss2]) < bestLoss:
         if t_min_loss1 < t_min_loss2:
             bestLoss = t_min_loss1
-            bestStructure = structure1[tf.argmin(loss1)]
+            bestStructure = structure1[tf.argmin(loss1)].numpy()
             print(tf.argmin(loss1).numpy())
         else:
             bestLoss = t_min_loss2
-            bestStructure = structure2[tf.argmin(loss2)]
+            bestStructure = structure2[tf.argmin(loss2)].numpy()
             print(tf.argmin(loss2).numpy())
         print(i, bestLoss)
         print(bestStructure)
