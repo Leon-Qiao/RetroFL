@@ -114,41 +114,43 @@ opt = tf.keras.optimizers.legacy.Adam(learning_rate=0.03)
 
 num_gpu = len(gpus)
 
-start = np.random.uniform(0, 1, (num_nodes * num_gpu, 10))
 structure = []
 for i in range(num_gpu):
-    structure.append(tf.Variable(start[i * num_nodes: (i + 1) * num_nodes], dtype=tf.float32))
+    structure.append(tf.Variable(np.random.uniform(0, 1, (num_nodes, 10)), dtype=tf.float32))
 
 freqs = [tf.tile([[0.24]], [num_nodes, 1]), tf.tile([[0.25]], [num_nodes, 1]), tf.tile([[0.26]], [num_nodes, 1])]
-loss = [0, 0]
+minLoss = [0, 0]
+minIndex = [0, 0]
+minS = [0, 0]
 
 for i in range(num_node_epochs):
     for j in range(num_gpu):
-        loss[j] = 0
         with tf.device("/gpu:" + str(j)):
             with tf.GradientTape(watch_accessed_variables=False) as tape:
                 tape.watch(structure[j])
-                for k in range(3):
-                    y_pred = model(tf.concat([freqs[k], structure[j]], axis=1))
-                    loss[j] += obj_func(y_pred)
+                y_pred1 = model(tf.concat([freqs[0], structure[j]], axis=1))
+                y_pred2 = model(tf.concat([freqs[1], structure[j]], axis=1))
+                y_pred3 = model(tf.concat([freqs[2], structure[j]], axis=1))
+                loss = obj_func(y_pred1) + obj_func(y_pred2) + obj_func(y_pred3)
+            minLoss[j] = tf.reduce_min(loss).numpy()
+            minIndex[j] = tf.argmin(loss)
+            minS[j] = structure[j][minIndex[j]]
             grads = tape.gradient(loss[j], structure[j])
             opt.apply_gradients(grads_and_vars=zip([grads], [structure[j]]))
             nega_place = tf.where(structure[j] < 0)
             # structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(mmin[nega_place[:,1]], mmax[nega_place[:,1]], (nega_place.shape[0]))]))
             structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(0, 1, (nega_place.shape[0]))]))
-    t_min_loss1 = tf.reduce_min(loss[0]).numpy()
-    t_min_loss2 = tf.reduce_min(loss[1]).numpy()
-    if np.min([t_min_loss1, t_min_loss2]) < bestLoss:
-        if t_min_loss1 < t_min_loss2:
-            bestLoss = t_min_loss1
+    if np.min([minLoss[0], minLoss[1]]) < bestLoss:
+        if minLoss[0] < minLoss[1]:
+            bestLoss = minLoss[0]
             # bestStructure = structure[0][tf.argmin(loss[0])].numpy()
-            bestStructure = data_loader.mmX.inverse_transform([structure[0][tf.argmin(loss[0])].numpy()])[0]
-            print(tf.argmin(loss[0]).numpy())
+            bestStructure = data_loader.mmX.inverse_transform([minS[0].numpy()])[0]
+            print(minIndex[0])
         else:
-            bestLoss = t_min_loss2
+            bestLoss = minLoss[1]
             # bestStructure = structure[1][tf.argmin(loss[1])].numpy()
-            bestStructure = data_loader.mmX.inverse_transform([structure[1][tf.argmin(loss[1])].numpy()])[0]
-            print(tf.argmin(loss[1]).numpy())
+            bestStructure = data_loader.mmX.inverse_transform([minS[1].numpy()])[0]
+            print(minIndex[1])
         print(i, bestLoss)
         print(bestStructure)
         print()
