@@ -96,10 +96,11 @@ tf.saved_model.save(model, './models')
 # model = tf.saved_model.load('./models')
 
 def obj_func(s_para):
-    E11 = s_para[:,0]**2 + s_para[:,1]**2
-    E21 = s_para[:,2]**2 + s_para[:,3]**2
-    E31 = s_para[:,4]**2 + s_para[:,5]**2
-    E41 = s_para[:,6]**2 + s_para[:,7]**2
+    s_para = tf.square(s_para)
+    E11 = s_para[:,0] + s_para[:,1]
+    E21 = s_para[:,2] + s_para[:,3]
+    E31 = s_para[:,4] + s_para[:,5]
+    E41 = s_para[:,6] + s_para[:,7]
     loss = E11 + E41 + tf.abs(E21/(E31+E21) - 0.667)
     return loss
 
