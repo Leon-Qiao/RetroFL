@@ -107,8 +107,9 @@ bestLoss = 10
 bestStructure = []
 
 opt = tf.keras.optimizers.legacy.Adam(learning_rate=0.003)
-rindex = np.random.randint(0, data_loader.X.shape[0], num_nodes * 2)
-start = data_loader.X[rindex, 1:]
+mmin = np.min(data_loader.X[: , 1: ], axis=0)
+mmax = np.max(data_loader.X[: , 1: ], axis=0)
+start = np.random.uniform(mmin, mmax, (num_nodes * 2, mmin.shape[0]))
 structure1 = tf.Variable(start[: num_nodes], dtype=tf.float32)
 structure2 = tf.Variable(start[num_nodes:], dtype=tf.float32)
 for i in range(num_node_epochs):
@@ -125,7 +126,7 @@ for i in range(num_node_epochs):
         grads = tape.gradient(loss1, structure1)
         opt.apply_gradients(grads_and_vars=zip([grads], [structure1]))
         nega_place = tf.where(structure1 < 0)
-        structure1 = tf.Variable(tf.tensor_scatter_nd_update(structure1, [nega_place], [data_loader.X[np.random.randint(0, data_loader.X.shape[0], nega_place.shape[0]), nega_place[:,1] + 1]]))
+        structure1 = tf.Variable(tf.tensor_scatter_nd_update(structure1, [nega_place], [np.random.uniform(mmin[nega_place[:,1]], mmax[nega_place[:,1]], (nega_place.shape[0]))]))
     with tf.device("/gpu:1"):
         with tf.GradientTape(watch_accessed_variables=False) as tape:
             tape.watch(structure2)
@@ -139,7 +140,7 @@ for i in range(num_node_epochs):
         grads = tape.gradient(loss2, structure2)
         opt.apply_gradients(grads_and_vars=zip([grads], [structure2]))
         nega_place = tf.where(structure2 < 0)
-        structure2 = tf.Variable(tf.tensor_scatter_nd_update(structure2, [nega_place], [data_loader.X[np.random.randint(0, data_loader.X.shape[0], nega_place.shape[0]), nega_place[:,1] + 1]]))
+        structure2 = tf.Variable(tf.tensor_scatter_nd_update(structure2, [nega_place], [np.random.uniform(mmin[nega_place[:,1]], mmax[nega_place[:,1]], (nega_place.shape[0]))]))
     t_min_loss1 = tf.reduce_min(loss1).numpy()
     t_min_loss2 = tf.reduce_min(loss2).numpy()
     if np.min([t_min_loss1, t_min_loss2]) < bestLoss:
