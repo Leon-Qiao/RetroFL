@@ -50,8 +50,6 @@ num_epochs = 150
 batch_size = 1024
 learning_rate = 0.001
 
-
-
 model = MLP()
 data_loader = DataLoader()
 optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
