@@ -113,7 +113,7 @@ structure1 = tf.Variable(start[: num_nodes], dtype=tf.float32)
 structure2 = tf.Variable(start[num_nodes:], dtype=tf.float32)
 for i in range(num_node_epochs):
     with tf.device("/gpu:0"):
-        with tf.GradientTape(watch_accessed_variables=False, persistent=True) as tape:
+        with tf.GradientTape(watch_accessed_variables=False) as tape:
             tape.watch(structure1)
             X1 = tf.concat([tf.tile([[2.4]], [num_nodes, 1]), structure1], axis=1)
             X2 = tf.concat([tf.tile([[2.5]], [num_nodes, 1]), structure1], axis=1)
@@ -127,7 +127,7 @@ for i in range(num_node_epochs):
         nega_place = tf.where(structure1 < 0)
         structure1 = tf.Variable(tf.tensor_scatter_nd_update(structure1, [nega_place], [data_loader.X[np.random.randint(0, data_loader.X.shape[0], nega_place.shape[0]), nega_place[:,1] + 1]]))
     with tf.device("/gpu:1"):
-        with tf.GradientTape(watch_accessed_variables=False, persistent=True) as tape:
+        with tf.GradientTape(watch_accessed_variables=False) as tape:
             tape.watch(structure2)
             X1 = tf.concat([tf.tile([[2.4]], [num_nodes, 1]), structure2], axis=1)
             X2 = tf.concat([tf.tile([[2.5]], [num_nodes, 1]), structure2], axis=1)
