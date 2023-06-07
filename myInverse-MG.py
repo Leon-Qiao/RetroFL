@@ -20,7 +20,8 @@ class DataLoader:
         self.X[:,1:] = self.mmX.fit_transform(self.X[:,1:])
         self.X[:,0] = self.X[:,0] / 10
         # self.X, _, self.y, _ = train_test_split(self.X, self.y, test_size=0.75, random_state=0)
-        self.X_train, self.X_vali, self.y_train, self.y_vali = train_test_split(self.X, self.y, test_size=0, random_state=0)
+        # self.X_train, self.X_vali, self.y_train, self.y_vali = train_test_split(self.X, self.y, test_size=0.1, random_state=0)
+        self.X_train, self.y_train = self.X, self.y
         self.num_train = self.X_train.shape[0]
     def get_batch(self, batch_size=0, mode='train'):
         if mode == 'train':
