@@ -135,7 +135,7 @@ for i in range(num_node_epochs):
             minLoss[j] = tf.reduce_min(loss).numpy()
             minIndex[j] = tf.argmin(loss)
             minS[j] = structure[j][minIndex[j]]
-            grads = tape.gradient(loss[j], structure[j])
+            grads = tape.gradient(loss, structure[j])
             opt.apply_gradients(grads_and_vars=zip([grads], [structure[j]]))
             nega_place = tf.where(structure[j] < 0)
             # structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(mmin[nega_place[:,1]], mmax[nega_place[:,1]], (nega_place.shape[0]))]))
