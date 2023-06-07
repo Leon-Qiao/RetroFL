@@ -60,6 +60,7 @@ X_v, y_v = data_loader.get_batch(mode='validate')
 X_true = np.array([[2.0, 2.003, 2.615, 1.335, 1.5, 3.177, 2.684, 1.034, 1.943, 20.81, 17.02], [2.5, 2.003, 2.615, 1.335, 1.5, 3.177, 2.684, 1.034, 1.943, 20.81, 17.02], [3.0, 2.003, 2.615, 1.335, 1.5, 3.177, 2.684, 1.034, 1.943, 20.81, 17.02]])
 y_true = np.array([[0.054, 0.229, 0.080, -0.711, -0.585, -0.085, -0.262, -0.073], [-0.005, 0.002, -0.458, -0.674, -0.466, 0.328, -0.030, 0.006], [-0.232, -0.110, -0.676, -0.154, -0.118, 0.601, -0.065, -0.248]])
 X_true[:,1:] = data_loader.mmX.transform(X_true[:,1:])
+X_true[:,0] = X_true[:,0] / 10
 
 def train():
     num_batch = data_loader.num_train // batch_size
@@ -90,10 +91,10 @@ def train():
             true_r2 = 1 - tf.reduce_sum(tf.square(y_t_p - y_true)) / tf.reduce_sum(tf.square(y_true - tf.cast(tf.reduce_mean(y_true), dtype=tf.float32)))
             print("true mse:{} rmse:{} mae:{} r2:{}".format(true_mse, true_rmse, true_mae, true_r2))
 
-train()
-tf.saved_model.save(model, './models')
+# train()
+# tf.saved_model.save(model, './models')
 
-# model = tf.saved_model.load('./models')
+model = tf.saved_model.load('./models')
 
 def obj_func(s_para):
     s_para = tf.square(s_para)
@@ -126,7 +127,7 @@ loss = [0, 0]
 for i in range(num_node_epochs):
     for j in range(num_gpu):
         loss[j] = 0
-        with tf.device(gpus[j]):
+        with tf.device("/gpu:" + str(j)):
             with tf.GradientTape(watch_accessed_variables=False) as tape:
                 tape.watch(structure[j])
                 for k in range(3):
