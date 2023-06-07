@@ -8,7 +8,7 @@ gpus = tf.config.list_physical_devices(device_type = 'GPU')
 tf.config.experimental.set_memory_growth(gpus[0], True)
 tf.config.experimental.set_memory_growth(gpus[1], True)
 
-num_nodes = 10240
+num_nodes = 20480
 num_node_epochs = 5000
 
 class DataLoader:
@@ -90,10 +90,10 @@ def train():
             true_r2 = 1 - tf.reduce_sum(tf.square(y_t_p - y_true)) / tf.reduce_sum(tf.square(y_true - tf.cast(tf.reduce_mean(y_true), dtype=tf.float32)))
             print("true mse:{} rmse:{} mae:{} r2:{}".format(true_mse, true_rmse, true_mae, true_r2))
 
-# train()
-# tf.saved_model.save(model, './models')
+train()
+tf.saved_model.save(model, './models')
 
-model = tf.saved_model.load('./models')
+# model = tf.saved_model.load('./models')
 
 def obj_func(s_para):
     E11 = s_para[:,0]**2 + s_para[:,1]**2
