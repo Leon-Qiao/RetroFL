@@ -133,7 +133,7 @@ for i in range(num_node_epochs):
                 y_pred3 = model(tf.concat([freqs[2], structure[j]], axis=1))
                 loss = obj_func(y_pred1) + obj_func(y_pred2) + obj_func(y_pred3)
             minLoss[j] = tf.reduce_min(loss).numpy()
-            minIndex[j] = tf.argmin(loss)
+            minIndex[j] = tf.argmin(loss).numpy()
             minS[j] = structure[j][minIndex[j]]
             grads = tape.gradient(loss, structure[j])
             opt.apply_gradients(grads_and_vars=zip([grads], [structure[j]]))
