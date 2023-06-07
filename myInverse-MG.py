@@ -105,29 +105,50 @@ def obj_func(s_para):
 bestLoss = 10
 bestStructure = []
 
-opt = tf.keras.optimizers.legacy.Adam(learning_rate=0.003)
-rindex = np.random.randint(0, data_loader.X.shape[0], num_nodes)
+opt = tf.keras.optimizers.Adam(learning_rate=0.003)
+rindex = np.random.randint(0, data_loader.X.shape[0], num_nodes * 2)
 start = data_loader.X[rindex, 1:]
-structure = tf.Variable(start, dtype=tf.float32)
+structure1 = tf.Variable(start[: num_nodes], dtype=tf.float32)
+structure2 = tf.Variable(start[num_nodes:], dtype=tf.float32)
 for i in range(num_node_epochs):
-    with tf.GradientTape(watch_accessed_variables=False, persistent=True) as tape:
-        tape.watch(structure)
-        X1 = tf.concat([tf.tile([[2.4]], [num_nodes, 1]), structure], axis=1)
-        X2 = tf.concat([tf.tile([[2.5]], [num_nodes, 1]), structure], axis=1)
-        X3 = tf.concat([tf.tile([[2.6]], [num_nodes, 1]), structure], axis=1)
-        y1_pred = model(X1)
-        y2_pred = model(X2)
-        y3_pred = model(X3)
-        loss = obj_func(y1_pred) + obj_func(y2_pred) + obj_func(y3_pred)
-        t_min_loss = tf.reduce_min(loss).numpy()
-        if t_min_loss < bestLoss:
-            bestLoss = t_min_loss
-#             bestStructure = A.data_loader.mmX.inverse_transform([structure.numpy()[0]])[0]
-            bestStructure = structure[tf.argmin(loss)]
-            print(tf.argmin(loss).numpy(), i, bestLoss)
-            print(bestStructure)
-            print()
-    grads = tape.gradient(loss, structure)
-    opt.apply_gradients(grads_and_vars=zip([grads], [structure]))
-    nega_place = tf.where(structure < 0)
-    structure = tf.Variable(tf.tensor_scatter_nd_update(structure, [nega_place], [data_loader.X[np.random.randint(0, data_loader.X.shape[0], nega_place.shape[0]), nega_place[:,1] + 1]]))
+    with tf.device("/gpu:0"):
+        with tf.GradientTape(watch_accessed_variables=False, persistent=True) as tape:
+            tape.watch(structure1)
+            X1 = tf.concat([tf.tile([[2.4]], [num_nodes, 1]), structure1], axis=1)
+            X2 = tf.concat([tf.tile([[2.5]], [num_nodes, 1]), structure1], axis=1)
+            X3 = tf.concat([tf.tile([[2.6]], [num_nodes, 1]), structure1], axis=1)
+            y1_pred = model(X1)
+            y2_pred = model(X2)
+            y3_pred = model(X3)
+            loss1 = obj_func(y1_pred) + obj_func(y2_pred) + obj_func(y3_pred)
+        grads = tape.gradient(loss1, structure1)
+        opt.apply_gradients(grads_and_vars=zip([grads], [structure1]))
+        nega_place = tf.where(structure1 < 0)
+        structure1 = tf.Variable(tf.tensor_scatter_nd_update(structure1, [nega_place], [data_loader.X[np.random.randint(0, data_loader.X.shape[0], nega_place.shape[0]), nega_place[:,1] + 1]]))
+    with tf.device("/gpu:1"):
+        with tf.GradientTape(watch_accessed_variables=False, persistent=True) as tape:
+            tape.watch(structure2)
+            X1 = tf.concat([tf.tile([[2.4]], [num_nodes, 1]), structure2], axis=1)
+            X2 = tf.concat([tf.tile([[2.5]], [num_nodes, 1]), structure2], axis=1)
+            X3 = tf.concat([tf.tile([[2.6]], [num_nodes, 1]), structure2], axis=1)
+            y1_pred = model(X1)
+            y2_pred = model(X2)
+            y3_pred = model(X3)
+            loss2 = obj_func(y1_pred) + obj_func(y2_pred) + obj_func(y3_pred)
+        grads = tape.gradient(loss2, structure2)
+        opt.apply_gradients(grads_and_vars=zip([grads], [structure2]))
+        nega_place = tf.where(structure2 < 0)
+        structure2 = tf.Variable(tf.tensor_scatter_nd_update(structure2, [nega_place], [data_loader.X[np.random.randint(0, data_loader.X.shape[0], nega_place.shape[0]), nega_place[:,1] + 1]]))
+    t_min_loss1 = tf.reduce_min(loss1).numpy()
+    t_min_loss2 = tf.reduce_min(loss2).numpy()
+    if np.min([t_min_loss1, t_min_loss2]) < bestLoss:
+        if t_min_loss1 < t_min_loss2:
+            bestLoss = t_min_loss1
+            bestStructure = structure1[tf.argmin(loss1)]
+        else:
+            bestLoss = t_min_loss2
+            bestStructure = structure2[tf.argmin(loss2)]
+            print(tf.argmin(loss1).numpy())
+        print(i, bestLoss)
+        print(bestStructure)
+        print()
