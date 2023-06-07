@@ -150,7 +150,7 @@ for i in range(num_node_epochs):
             bestLoss = minLoss[1]
             # bestStructure = structure[1][tf.argmin(loss[1])].numpy()
             bestStructure = data_loader.mmX.inverse_transform([minS[1].numpy()])[0]
-            print(minIndex[1])
+            print(num_nodes + minIndex[1])
         print(i, bestLoss)
         print(bestStructure)
         print()

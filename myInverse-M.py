@@ -62,9 +62,6 @@ def train():
             with tf.GradientTape() as tape:
                 y_pred = model(X)
                 tr_mse = tf.reduce_mean(tf.square(y_pred - y))
-                tr_rmse = tf.sqrt(tr_mse)
-                tr_mae = tf.reduce_mean(tf.abs(y_pred - y))
-                tr_r2 = 1 - tf.reduce_sum(tf.square(y_pred - y)) / tf.reduce_sum(tf.square(y - tf.cast(tf.reduce_mean(y), dtype=tf.float32)))
             grads = tape.gradient(tr_mse, model.variables)
             optimizer.apply_gradients(grads_and_vars=zip(grads, model.variables))
         if epoch_index in [0, 25, 50, 75, 100, 125, 149]:
@@ -105,16 +102,22 @@ def obj_func(s_para):
 bestLoss = 10
 bestStructure = []
 
+mmin = np.min(data_loader.X[: , 1: ], axis=0)
+mmax = np.max(data_loader.X[: , 1: ], axis=0)
+start = np.random.uniform(mmin, mmax, (num_nodes, 10))
+freq1 = tf.tile([[2.4]], [num_nodes, 1])
+freq2 = tf.tile([[2.5]], [num_nodes, 1])
+freq3 = tf.tile([[2.6]], [num_nodes, 1])
+
 opt = tf.keras.optimizers.legacy.Adam(learning_rate=0.003)
-rindex = np.random.randint(0, data_loader.X.shape[0], num_nodes)
-start = data_loader.X[rindex, 1:]
+
 structure = tf.Variable(start, dtype=tf.float32)
 for i in range(num_node_epochs):
-    with tf.GradientTape(watch_accessed_variables=False, persistent=True) as tape:
+    with tf.GradientTape(watch_accessed_variables=False) as tape:
         tape.watch(structure)
-        X1 = tf.concat([tf.tile([[2.4]], [num_nodes, 1]), structure], axis=1)
-        X2 = tf.concat([tf.tile([[2.5]], [num_nodes, 1]), structure], axis=1)
-        X3 = tf.concat([tf.tile([[2.6]], [num_nodes, 1]), structure], axis=1)
+        X1 = tf.concat([freq1, structure], axis=1)
+        X2 = tf.concat([freq2, structure], axis=1)
+        X3 = tf.concat([freq3, structure], axis=1)
         y1_pred = model(X1)
         y2_pred = model(X2)
         y3_pred = model(X3)
@@ -130,4 +133,5 @@ for i in range(num_node_epochs):
     grads = tape.gradient(loss, structure)
     opt.apply_gradients(grads_and_vars=zip([grads], [structure]))
     nega_place = tf.where(structure < 0)
-    structure = tf.Variable(tf.tensor_scatter_nd_update(structure, [nega_place], [data_loader.X[np.random.randint(0, data_loader.X.shape[0], nega_place.shape[0]), nega_place[:,1] + 1]]))
+    structure = tf.Variable(tf.tensor_scatter_nd_update(structure, [nega_place], [np.random.uniform(mmin[nega_place[:,1]], mmax[nega_place[:,1]], (nega_place.shape[0]))]))
+            
