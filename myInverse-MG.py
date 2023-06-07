@@ -105,7 +105,7 @@ def obj_func(s_para):
 bestLoss = 10
 bestStructure = []
 
-opt = tf.keras.optimizers.Adam(learning_rate=0.003)
+opt = tf.keras.optimizers.legacy.Adam(learning_rate=0.003)
 rindex = np.random.randint(0, data_loader.X.shape[0], num_nodes * 2)
 start = data_loader.X[rindex, 1:]
 structure1 = tf.Variable(start[: num_nodes], dtype=tf.float32)
