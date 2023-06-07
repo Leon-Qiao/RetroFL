@@ -144,12 +144,12 @@ for i in range(num_node_epochs):
         if t_min_loss1 < t_min_loss2:
             bestLoss = t_min_loss1
             # bestStructure = structure[0][tf.argmin(loss[0])].numpy()
-            bestStructure = data_loader.mmX.inverse_transform([structure[0][tf.argmin(loss[0])].numpy()[0]])[0]
+            bestStructure = data_loader.mmX.inverse_transform([structure[0][tf.argmin(loss[0])].numpy()])[0]
             print(tf.argmin(loss[0]).numpy())
         else:
             bestLoss = t_min_loss2
             # bestStructure = structure[1][tf.argmin(loss[1])].numpy()
-            bestStructure = data_loader.mmX.inverse_transform([structure[1][tf.argmin(loss[1])].numpy()[0]])[0]
+            bestStructure = data_loader.mmX.inverse_transform([structure[1][tf.argmin(loss[1])].numpy()])[0]
             print(tf.argmin(loss[1]).numpy())
         print(i, bestLoss)
         print(bestStructure)
