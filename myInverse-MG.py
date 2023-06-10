@@ -16,9 +16,9 @@ class DataLoader:
         AS_dataset = pd.read_csv('/user/work/ri22467/20-25-30-35-40.csv', encoding='utf-8')
         self.X = AS_dataset.loc[:,'freq':'l2'].to_numpy()
         self.y = AS_dataset.loc[:,'s11r':'s41i'].to_numpy()
-        self.mmX = MinMaxScaler()
-        self.X[:,1:] = self.mmX.fit_transform(self.X[:,1:])
-        self.X[:,0] = self.X[:,0] / 10
+        # self.mmX = MinMaxScaler()
+        # self.X[:,1:] = self.mmX.fit_transform(self.X[:,1:])
+        # self.X[:,0] = self.X[:,0] / 10
         # self.X, _, self.y, _ = train_test_split(self.X, self.y, test_size=0.75, random_state=0)
         # self.X_train, self.X_vali, self.y_train, self.y_vali = train_test_split(self.X, self.y, test_size=0.1, random_state=0)
         self.X_train, self.y_train = self.X, self.y
@@ -58,8 +58,8 @@ optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
 
 X_true = np.array([[2.0, 2.003, 2.615, 1.335, 1.5, 3.177, 2.684, 1.034, 1.943, 20.81, 17.02], [2.5, 2.003, 2.615, 1.335, 1.5, 3.177, 2.684, 1.034, 1.943, 20.81, 17.02], [3.0, 2.003, 2.615, 1.335, 1.5, 3.177, 2.684, 1.034, 1.943, 20.81, 17.02]])
 y_true = np.array([[0.054, 0.229, 0.080, -0.711, -0.585, -0.085, -0.262, -0.073], [-0.005, 0.002, -0.458, -0.674, -0.466, 0.328, -0.030, 0.006], [-0.232, -0.110, -0.676, -0.154, -0.118, 0.601, -0.065, -0.248]])
-X_true[:,1:] = data_loader.mmX.transform(X_true[:,1:])
-X_true[:,0] = X_true[:,0] / 10
+# X_true[:,1:] = data_loader.mmX.transform(X_true[:,1:])
+# X_true[:,0] = X_true[:,0] / 10
 
 def train():
     num_batch = data_loader.num_train // batch_size
@@ -90,10 +90,10 @@ def train():
             true_r2 = 1 - tf.reduce_sum(tf.square(y_t_p - y_true)) / tf.reduce_sum(tf.square(y_true - tf.cast(tf.reduce_mean(y_true), dtype=tf.float32)))
             print("true mse:{} rmse:{} mae:{} r2:{}".format(true_mse, true_rmse, true_mae, true_r2))
 
-# train()
-# tf.saved_model.save(model, './models')
+train()
+tf.saved_model.save(model, './models')
 
-model = tf.saved_model.load('./models')
+# model = tf.saved_model.load('./models')
 
 def obj_func(s_para):
     s_para = tf.square(s_para)
@@ -109,18 +109,18 @@ bestStructure = []
 
 opt = tf.keras.optimizers.legacy.Adam(learning_rate=0.03)
 
-# mmin = np.min(data_loader.X[: , 1: ], axis=0)
-# mmax = np.max(data_loader.X[: , 1: ], axis=0)
-# start = np.random.uniform(mmin, mmax, (num_nodes * 2, mmin.shape[0]))
+mmin = np.min(data_loader.X[: , 1: ], axis=0)
+mmax = np.max(data_loader.X[: , 1: ], axis=0)
 
 num_gpu = len(gpus)
 
 structure = []
 for i in range(num_gpu):
-    structure.append(tf.Variable(np.random.uniform(0, 1, (num_nodes, 10)), dtype=tf.float32))
+    # structure.append(tf.Variable(np.random.uniform(0, 1, (num_nodes, 10)), dtype=tf.float32))
+    structure.append(tf.Variable(np.random.uniform(mmin, mmax, (num_nodes, 10)), dtype=tf.float32))
 
 # freq1 = tf.tile([[0.24]], [num_nodes, 1])
-freq2 = tf.tile([[0.25]], [num_nodes, 1])
+freq2 = tf.tile([[2.5]], [num_nodes, 1])
 # freq3 = tf.tile([[0.26]], [num_nodes, 1])
 
 minLoss = [0, 0]
@@ -139,22 +139,22 @@ for i in range(num_node_epochs):
                 loss = obj_func(y_pred2)
             minLoss[j] = tf.reduce_min(loss).numpy()
             minIndex[j] = tf.argmin(loss).numpy()
-            minS[j] = structure[j][minIndex[j]]
+            minS[j] = structure[j][minIndex[j]].numpy()
             grads = tape.gradient(loss, structure[j])
             opt.apply_gradients(grads_and_vars=zip([grads], [structure[j]]))
             nega_place = tf.where(structure[j] < 0)
-            # structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(mmin[nega_place[:,1]], mmax[nega_place[:,1]], (nega_place.shape[0]))]))
-            structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(0, 1, (nega_place.shape[0]))]))
+            structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(mmin[nega_place[:,1]], mmax[nega_place[:,1]], (nega_place.shape[0]))]))
+            # structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(0, 1, (nega_place.shape[0]))]))
     if np.min([minLoss[0], minLoss[1]]) < bestLoss:
         if minLoss[0] < minLoss[1]:
             bestLoss = minLoss[0]
-            # bestStructure = structure[0][tf.argmin(loss[0])].numpy()
-            bestStructure = data_loader.mmX.inverse_transform([minS[0].numpy()])[0]
+            bestStructure = minS[0]
+            # bestStructure = data_loader.mmX.inverse_transform([minS[0]])[0]
             print(minIndex[0])
         else:
             bestLoss = minLoss[1]
-            # bestStructure = structure[1][tf.argmin(loss[1])].numpy()
-            bestStructure = data_loader.mmX.inverse_transform([minS[1].numpy()])[0]
+            bestStructure = minS[1]
+            # bestStructure = data_loader.mmX.inverse_transform([minS[1]])[0]
             print(num_nodes + minIndex[1])
         print(i, bestLoss)
         print(bestStructure)
