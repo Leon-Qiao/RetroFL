@@ -119,9 +119,9 @@ structure = []
 for i in range(num_gpu):
     structure.append(tf.Variable(np.random.uniform(0, 1, (num_nodes, 10)), dtype=tf.float32))
 
-freq1 = tf.tile([[0.24]], [num_nodes, 1])
+# freq1 = tf.tile([[0.24]], [num_nodes, 1])
 freq2 = tf.tile([[0.25]], [num_nodes, 1])
-freq3 = tf.tile([[0.26]], [num_nodes, 1])
+# freq3 = tf.tile([[0.26]], [num_nodes, 1])
 
 minLoss = [0, 0]
 minIndex = [0, 0]
@@ -132,10 +132,11 @@ for i in range(num_node_epochs):
         with tf.device("/gpu:" + str(j)):
             with tf.GradientTape(watch_accessed_variables=False) as tape:
                 tape.watch(structure[j])
-                y_pred1 = model(tf.concat([freq1, structure[j]], axis=1))
+                # y_pred1 = model(tf.concat([freq1, structure[j]], axis=1))
                 y_pred2 = model(tf.concat([freq2, structure[j]], axis=1))
-                y_pred3 = model(tf.concat([freq3, structure[j]], axis=1))
-                loss = obj_func(y_pred1) + obj_func(y_pred2) + obj_func(y_pred3)
+                # y_pred3 = model(tf.concat([freq3, structure[j]], axis=1))
+                # loss = obj_func(y_pred1) + obj_func(y_pred2) + obj_func(y_pred3)
+                loss = obj_func(y_pred2)
             minLoss[j] = tf.reduce_min(loss).numpy()
             minIndex[j] = tf.argmin(loss).numpy()
             minS[j] = structure[j][minIndex[j]]
