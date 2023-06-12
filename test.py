@@ -6,13 +6,13 @@ from sklearn.preprocessing import MinMaxScaler
 model = tf.saved_model.load('./models')
 
 AS_dataset = pd.read_csv('/user/work/ri22467/20-25-30-35-40.csv', encoding='utf-8')
-dX = AS_dataset.loc[:,'freq':'l2'].to_numpy()
-mmX = MinMaxScaler()
-dX[:,1:] = mmX.fit_transform(dX[:,1:])
+# dX = AS_dataset.loc[:,'freq':'l2'].to_numpy()
+# mmX = MinMaxScaler()
+# dX[:,1:] = mmX.fit_transform(dX[:,1:])
 
 X = np.array([[2.7639604,  3.7490022,  2.7388225,  0.5229501,  7.2934303,  7.218549,  2.5859375,  3.546005,  17.558346,  14.7351265]])
 
-X = mmX.transform(X)
+# X = mmX.transform(X)
 
 X1 = tf.concat([tf.constant([[0.24]]), X], axis = 1)
 X2 = tf.concat([tf.constant([[0.25]]), X], axis = 1)
