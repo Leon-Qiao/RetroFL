@@ -14,9 +14,9 @@ X = np.array([[2.7639604,  3.7490022,  2.7388225,  0.5229501,  7.2934303,  7.218
 
 # X = mmX.transform(X)
 
-X1 = tf.concat([tf.constant([[0.24]]), X], axis = 1)
-X2 = tf.concat([tf.constant([[0.25]]), X], axis = 1)
-X3 = tf.concat([tf.constant([[0.26]]), X], axis = 1)
+X1 = tf.concat([tf.constant([[2.4]]), X], axis = 1)
+X2 = tf.concat([tf.constant([[2.5]]), X], axis = 1)
+X3 = tf.concat([tf.constant([[2.6]]), X], axis = 1)
 
 y1 = model(X1)
 y2 = model(X2)
