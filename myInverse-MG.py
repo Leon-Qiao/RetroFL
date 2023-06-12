@@ -90,10 +90,10 @@ def train():
             true_r2 = 1 - tf.reduce_sum(tf.square(y_t_p - y_true)) / tf.reduce_sum(tf.square(y_true - tf.cast(tf.reduce_mean(y_true), dtype=tf.float32)))
             print("true mse:{} rmse:{} mae:{} r2:{}".format(true_mse, true_rmse, true_mae, true_r2))
 
-train()
-tf.saved_model.save(model, './models')
+# train()
+# tf.saved_model.save(model, './models')
 
-# model = tf.saved_model.load('./models')
+model = tf.saved_model.load('./models')
 
 def obj_func(s_para):
     s_para = tf.square(s_para)
@@ -119,31 +119,71 @@ for i in range(num_gpu):
     # structure.append(tf.Variable(np.random.uniform(0, 1, (num_nodes, 10)), dtype=tf.float32))
     structure.append(tf.Variable(np.random.uniform(mmin, mmax, (num_nodes, 10)), dtype=tf.float32))
 
-# freq1 = tf.tile([[0.24]], [num_nodes, 1])
-freq2 = tf.tile([[2.5]], [num_nodes, 1])
-# freq3 = tf.tile([[0.26]], [num_nodes, 1])
+freq1 = tf.ones([num_nodes, 1]) * 2.4
+freq2 = tf.ones([num_nodes, 1]) * 2.5
+freq3 = tf.ones([num_nodes, 1]) * 2.6
 
 minLoss = [0, 0]
 minIndex = [0, 0]
 minS = [0, 0]
+
+def check(structure):
+    inva_place1 = tf.where(tf.logical_or(structure[:,:8] < 0.1, structure[:,:8] > 10.1))
+    structure = tf.tensor_scatter_nd_update(structure, [inva_place1], [np.random.uniform(mmin[inva_place1[:,1]], mmax[inva_place1[:,1]], (inva_place1.shape[0]))])
+    
+    inva_place2 = tf.where(tf.logical_or(structure[:,8:] < 1, structure[:,8:] > 101)) + [0, 8]
+    structure = tf.tensor_scatter_nd_update(structure, [inva_place2], [np.random.uniform(mmin[inva_place2[:,1]], mmax[inva_place2[:,1]], (inva_place2.shape[0]))])
+    
+    inva_place3 = tf.where(structure[:,1] < structure[:,7]) # W2 < W8
+    a = tf.concat([inva_place3, tf.ones([inva_place3.shape[0], 1], dtype=tf.int64)], axis=1)
+    b = tf.concat([inva_place3, tf.ones([inva_place3.shape[0], 1], dtype=tf.int64) * 7], axis=1)
+    ori = tf.concat([a, b], axis=0)
+    cht = tf.concat([b, a], axis=0)
+    structure = tf.tensor_scatter_nd_update(structure, [ori], [tf.gather_nd(structure, cht)])
+    
+    inva_place4 = tf.where(structure[:,1] < structure[:,0]) # W2 < W1
+    a = tf.concat([inva_place4, tf.ones([inva_place4.shape[0], 1], dtype=tf.int64)], axis=1)
+    b = tf.concat([inva_place4, tf.zeros([inva_place4.shape[0], 1], dtype=tf.int64)], axis=1)
+    ori = tf.concat([a, b], axis=0)
+    cht = tf.concat([b, a], axis=0)
+    structure = tf.tensor_scatter_nd_update(structure, [ori], [tf.gather_nd(structure, cht)])
+    
+    inva_place5 = tf.where(structure[:,4] < structure[:,3]) # W5 < W4
+    a = tf.concat([inva_place5, tf.ones([inva_place5.shape[0], 1], dtype=tf.int64) * 4], axis=1)
+    b = tf.concat([inva_place5, tf.ones([inva_place5.shape[0], 1], dtype=tf.int64) * 3], axis=1)
+    ori = tf.concat([a, b], axis=0)
+    cht = tf.concat([b, a], axis=0)
+    structure = tf.tensor_scatter_nd_update(structure, [ori], [tf.gather_nd(structure, cht)])
+    
+    inva_place6 = tf.where(structure[:,4] < structure[:,5]) # W5 < W6
+    a = tf.concat([inva_place6, tf.ones([inva_place6.shape[0], 1], dtype=tf.int64) * 4], axis=1)
+    b = tf.concat([inva_place6, tf.ones([inva_place6.shape[0], 1], dtype=tf.int64) * 5], axis=1)
+    ori = tf.concat([a, b], axis=0)
+    cht = tf.concat([b, a], axis=0)
+    structure = tf.tensor_scatter_nd_update(structure, [ori], [tf.gather_nd(structure, cht)])
+    
+    return tf.Variable(structure)
+    
+    # structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(0, 1, (nega_place.shape[0]))]))
 
 for i in range(num_node_epochs):
     for j in range(num_gpu):
         with tf.device("/gpu:" + str(j)):
             with tf.GradientTape(watch_accessed_variables=False) as tape:
                 tape.watch(structure[j])
-                # y_pred1 = model(tf.concat([freq1, structure[j]], axis=1))
+                y_pred1 = model(tf.concat([freq1, structure[j]], axis=1))
                 y_pred2 = model(tf.concat([freq2, structure[j]], axis=1))
-                # y_pred3 = model(tf.concat([freq3, structure[j]], axis=1))
-                # loss = obj_func(y_pred1) + obj_func(y_pred2) + obj_func(y_pred3)
-                loss = obj_func(y_pred2)
+                y_pred3 = model(tf.concat([freq3, structure[j]], axis=1))
+                loss = obj_func(y_pred1) + obj_func(y_pred2) + obj_func(y_pred3)
+                # loss = obj_func(y_pred2)
             minLoss[j] = tf.reduce_min(loss).numpy()
             minIndex[j] = tf.argmin(loss).numpy()
             minS[j] = structure[j][minIndex[j]].numpy()
             grads = tape.gradient(loss, structure[j])
             opt.apply_gradients(grads_and_vars=zip([grads], [structure[j]]))
-            nega_place = tf.where(structure[j] < 0)
-            structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(mmin[nega_place[:,1]], mmax[nega_place[:,1]], (nega_place.shape[0]))]))
+            structure[j] = check(structure[j])
+            # nega_place = tf.where(structure[j] < 0)
+            # structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(mmin[nega_place[:,1]], mmax[nega_place[:,1]], (nega_place.shape[0]))]))
             # structure[j] = tf.Variable(tf.tensor_scatter_nd_update(structure[j], [nega_place], [np.random.uniform(0, 1, (nega_place.shape[0]))]))
     if np.min([minLoss[0], minLoss[1]]) < bestLoss:
         if minLoss[0] < minLoss[1]:
