@@ -71,7 +71,7 @@ def train():
                 tr_mse = tf.reduce_mean(tf.square(y_pred - y))
             grads = tape.gradient(tr_mse, model.variables)
             optimizer.apply_gradients(grads_and_vars=zip(grads, model.variables))
-        if epoch_index in [0, 25, 50, 75, 100, 125, 149]:
+        if epoch_index % 10 == 0 or epoch_index == num_epochs - 1:
             tr_rmse = tf.sqrt(tr_mse)
             tr_mae = tf.reduce_mean(tf.abs(y_pred - y))
             tr_r2 = 1 - tf.reduce_sum(tf.square(y_pred - y)) / tf.reduce_sum(tf.square(y - tf.cast(tf.reduce_mean(y), dtype=tf.float32)))
