@@ -20,7 +20,7 @@ class DataLoader:
         # self.X[:,1:] = self.mmX.fit_transform(self.X[:,1:])
         # self.X[:,0] = self.X[:,0] / 10
         # self.X, _, self.y, _ = train_test_split(self.X, self.y, test_size=0.75, random_state=0)
-        # self.X_train, self.X_vali, self.y_train, self.y_vali = train_test_split(self.X, self.y, test_size=0.1, random_state=0)
+        self.X_train, self.X_vali, self.y_train, self.y_vali = train_test_split(self.X, self.y, test_size=0.1, random_state=0)
         self.X_train, self.y_train = self.X, self.y
         self.num_train = self.X_train.shape[0]
     def get_batch(self, batch_size=0, mode='train'):
@@ -33,10 +33,10 @@ class DataLoader:
 class MLP(tf.keras.Model):
     def __init__(self):
         super().__init__()
-        self.dense1 = tf.keras.layers.Dense(units=32, activation=tf.nn.relu)
-        self.dense2 = tf.keras.layers.Dense(units=256, activation=tf.nn.relu)
+        self.dense1 = tf.keras.layers.Dense(units=256, activation=tf.nn.relu)
+        self.dense2 = tf.keras.layers.Dense(units=512, activation=tf.nn.relu)
         self.dense3 = tf.keras.layers.Dense(units=1024, activation=tf.nn.relu)
-        self.dense4 = tf.keras.layers.Dense(units=128, activation=tf.nn.relu)
+        self.dense4 = tf.keras.layers.Dense(units=256, activation=tf.nn.relu)
         self.dense5 = tf.keras.layers.Dense(units=8,  activation=tf.nn.tanh)
     
     def call(self, inputs):
@@ -47,14 +47,14 @@ class MLP(tf.keras.Model):
         output = self.dense5(x)
         return output
     
-num_epochs = 150
+num_epochs = 200
 batch_size = 1024
 learning_rate = 0.001
 
 model = MLP()
 data_loader = DataLoader()
 optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
-# X_v, y_v = data_loader.get_batch(mode='validate')
+X_v, y_v = data_loader.get_batch(mode='validate')
 
 X_true = np.array([[2.0, 2.003, 2.615, 1.335, 1.5, 3.177, 2.684, 1.034, 1.943, 20.81, 17.02], [2.5, 2.003, 2.615, 1.335, 1.5, 3.177, 2.684, 1.034, 1.943, 20.81, 17.02], [3.0, 2.003, 2.615, 1.335, 1.5, 3.177, 2.684, 1.034, 1.943, 20.81, 17.02]])
 y_true = np.array([[0.054, 0.229, 0.080, -0.711, -0.585, -0.085, -0.262, -0.073], [-0.005, 0.002, -0.458, -0.674, -0.466, 0.328, -0.030, 0.006], [-0.232, -0.110, -0.676, -0.154, -0.118, 0.601, -0.065, -0.248]])
@@ -77,12 +77,12 @@ def train():
             tr_r2 = 1 - tf.reduce_sum(tf.square(y_pred - y)) / tf.reduce_sum(tf.square(y - tf.cast(tf.reduce_mean(y), dtype=tf.float32)))
             print("epoch:{}".format(epoch_index))
             print("train mse:{} rmse:{} mae:{} r2:{}".format(tr_mse, tr_rmse, tr_mae, tr_r2))
-            # y_v_p = model(X_v)
-            # va_mse = tf.reduce_mean(tf.square(y_v_p - y_v))
-            # va_rmse = tf.sqrt(va_mse)
-            # va_mae = tf.reduce_mean(tf.abs(y_v_p - y_v))
-            # va_r2 = 1 - tf.reduce_sum(tf.square(y_v_p - y_v)) / tf.reduce_sum(tf.square(y_v - tf.cast(tf.reduce_mean(y_v), dtype=tf.float32)))
-            # print("vali mse:{} rmse:{} mae:{} r2:{}".format(va_mse, va_rmse, va_mae, va_r2))
+            y_v_p = model(X_v)
+            va_mse = tf.reduce_mean(tf.square(y_v_p - y_v))
+            va_rmse = tf.sqrt(va_mse)
+            va_mae = tf.reduce_mean(tf.abs(y_v_p - y_v))
+            va_r2 = 1 - tf.reduce_sum(tf.square(y_v_p - y_v)) / tf.reduce_sum(tf.square(y_v - tf.cast(tf.reduce_mean(y_v), dtype=tf.float32)))
+            print("vali mse:{} rmse:{} mae:{} r2:{}".format(va_mse, va_rmse, va_mae, va_r2))
             y_t_p = model(X_true)
             true_mse = tf.reduce_mean(tf.square(y_t_p - y_true))
             true_rmse = tf.sqrt(true_mse)
@@ -90,11 +90,12 @@ def train():
             true_r2 = 1 - tf.reduce_sum(tf.square(y_t_p - y_true)) / tf.reduce_sum(tf.square(y_true - tf.cast(tf.reduce_mean(y_true), dtype=tf.float32)))
             print("true mse:{} rmse:{} mae:{} r2:{}".format(true_mse, true_rmse, true_mae, true_r2))
 
-# train()
-# tf.saved_model.save(model, './models')
+train()
+tf.saved_model.save(model, './models')
 
-model = tf.saved_model.load('./models')
+# model = tf.saved_model.load('./models')
 
+"""
 def obj_func(s_para):
     s_para = tf.square(s_para)
     E11 = s_para[:,0] + s_para[:,1]
@@ -199,3 +200,5 @@ for i in range(num_node_epochs):
         print(i, bestLoss)
         print(bestStructure)
         print()
+
+"""
