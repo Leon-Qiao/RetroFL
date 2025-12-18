@@ -1,0 +1,396 @@
+2024-03-25 08:17:06,889 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-25 08:18:03,309 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-25 08:18:23,507 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-25 08:18:43,937 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-25 08:21:04,247 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-25 08:23:30,771 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-25 08:23:30,852 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-25 08:24:39,478 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-25 08:24:39,560 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-25 08:26:51,721 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -2.8272359371185303, best pos: [ 4.15203307  3.33875952  1.69235008  2.90484287  4.10014421  3.96074818
+  1.33874061  3.45660052 15.65147734 62.83818542 14.73481349 50.98436813]
+2024-03-25 09:20:49,799 - ipykernel.comm - ERROR - No such comm target registered: jupyter.widget.control
+2024-03-25 09:20:49,807 - Comm - WARNING - No such comm: fd9acf50-1d56-458b-96ba-b495e05c1e66
+2024-03-25 10:43:29,692 - ipykernel.comm - ERROR - No such comm target registered: jupyter.widget.control
+2024-03-25 10:43:29,699 - Comm - WARNING - No such comm: af7e9524-7a06-4e6b-90be-31cef181b25f
+2024-03-25 12:43:23,624 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-25 12:43:42,279 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-25 12:45:54,851 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -0.8690047860145569, best pos: [ 2.63715807  3.84143284  1.06602666  1.94417738  1.44725791  3.7308779
+  1.62341164  4.92931342 59.69221678 63.71957344 16.61200601  7.08466006]
+2024-03-25 12:46:04,030 - pyswarms.single.global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-25 12:48:14,768 - pyswarms.single.global_best - INFO - Optimization finished | best cost: -0.9180295467376709, best pos: [ 4.52470566  3.52279456  1.65136415  3.9265232   3.46414906  1.7425203
+  1.62027393  3.63239336 14.18418286 65.40521733 14.51585638 51.68677684]
+2024-03-28 08:00:29,667 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-28 08:00:29,747 - global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-28 08:02:42,107 - global_best - INFO - Optimization finished | best cost: -0.9219127893447876, best pos: [ 4.53992502  3.3254407   1.57545202  3.12561221  4.25311709  2.98518555
+  1.40009685  3.28211751 12.75775893 64.17162352 16.49574514 51.98804668]
+2024-03-28 08:05:46,753 - ipykernel.comm - ERROR - No such comm target registered: jupyter.widget.control
+2024-03-28 08:05:46,759 - Comm - WARNING - No such comm: 1ad85237-1e8d-4148-827f-532ee043e008
+2024-03-28 08:06:14,489 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-28 08:06:14,570 - global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-28 08:08:27,871 - global_best - INFO - Optimization finished | best cost: -0.9195714592933655, best pos: [ 4.99471073  3.40572666  1.64209504  4.44585003  4.08861639  4.60627371
+  1.43604577  2.1205286  13.80771103 63.2433752  16.50805314 49.8955861 ]
+2024-03-28 09:13:05,400 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-28 09:13:05,505 - global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-28 09:13:50,910 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-28 09:13:50,991 - global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-28 09:16:42,824 - global_best - INFO - Optimization finished | best cost: -0.9326515197753906, best pos: [ 4.99992151  3.71928451  1.7079998   1.93352257  3.79956662  3.58003752
+  1.12027482  3.97393992 13.98985759 62.80077276 14.19883569 52.70278937]
+2024-03-28 11:58:54,251 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-28 11:58:54,342 - global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-28 12:01:45,751 - global_best - INFO - Optimization finished | best cost: -2.859394073486328, best pos: [ 4.18492004  3.46199966  1.80244064  1.6915585   4.21563953  4.86884804
+  1.09825349  3.74360574 15.55585112 61.61690688 14.33995065 51.11480699]
+2024-03-28 12:01:45,827 - ipykernel.comm - ERROR - No such comm target registered: jupyter.widget.control
+2024-03-28 12:01:45,830 - Comm - WARNING - No such comm: fe577469-ccc8-473e-a07c-306ff6fdf708
+2024-03-28 13:10:34,741 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-03-28 13:10:34,814 - global_best - INFO - Optimize for 1000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-03-28 13:12:19,730 - global_best - INFO - Optimization finished | best cost: -2.4987757205963135, best pos: [ 3.44724455  4.14013981  1.47784882  4.72966386  4.0446644   1.72812159
+  3.18981245  3.37078851 55.18916198 63.89162806 14.70030676  9.95614669]
+2024-04-09 02:41:50,696 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-04-09 02:41:55,146 - global_best - INFO - Optimize for 3000 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 02:47:07,564 - global_best - INFO - Optimization finished | best cost: -2.714648485183716, best pos: [ 3.29515405  3.8248283   1.82010941  2.49914734  3.84600031  4.12669532
+  2.18406875  3.59010014 14.30716111 63.98216545 15.60262511 49.70426199]
+2024-04-09 04:15:21,488 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-04-09 04:15:41,605 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:16:43,809 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:16:50,794 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-04-09 04:16:58,144 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:17:17,621 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-04-09 04:18:16,630 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-04-09 04:18:21,345 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:18:32,595 - global_best - INFO - Optimization finished | best cost: -1.7896690368652344, best pos: [ 3.63995772  3.91934291  2.62953493  3.66440552  4.40780016  3.23540531
+  2.09679279  2.74985106 55.21281254 31.03678988 10.71348799 52.27702535]
+2024-04-09 04:18:32,601 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:18:43,327 - global_best - INFO - Optimization finished | best cost: -2.3307323455810547, best pos: [ 1.68969109  3.70369547  1.50502023  2.55271437  3.1650132   2.99970435
+  2.6694065   4.29696975 58.19386371 63.62148554 12.65570702  7.74064424]
+2024-04-09 04:18:43,334 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:18:53,656 - global_best - INFO - Optimization finished | best cost: -2.092583179473877, best pos: [ 3.08131377  4.06312085  2.02054085  2.80556138  2.89143001  4.81204694
+  2.53781098  4.03035953 56.78529256 33.74368715  7.22815612 47.48174636]
+2024-04-09 04:18:53,660 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:19:04,349 - global_best - INFO - Optimization finished | best cost: -2.7549118995666504, best pos: [ 4.01794668  3.26056082  1.31734023  2.82720449  2.69388064  2.39673584
+  1.30646259  3.14970593 15.50382588 64.82069809 14.00765575 52.07926846]
+2024-04-09 04:19:04,355 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:19:14,628 - global_best - INFO - Optimization finished | best cost: -2.699162721633911, best pos: [ 3.11987485  2.765854    1.14476228  1.92352111  3.21976688  3.51973873
+  1.09069835  2.56969497 19.1353704  65.1109019  14.11318011 51.7492291 ]
+2024-04-09 04:19:14,635 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:19:25,440 - global_best - INFO - Optimization finished | best cost: -2.200875759124756, best pos: [ 3.44266391  2.88439158  1.8651822   4.38862343  4.26310139  3.1237246
+  2.41715668  3.36066745 56.51980833 34.34205535  6.6629241  49.81696897]
+2024-04-09 04:19:25,447 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:19:36,074 - global_best - INFO - Optimization finished | best cost: -2.1114277839660645, best pos: [ 1.89562388  3.12062021  1.96959617  1.04504964  3.27536701  3.25014562
+  3.46360131  3.28989538 57.11354181 31.86647413 91.81169874 45.87840467]
+2024-04-09 04:19:36,081 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:19:47,258 - global_best - INFO - Optimization finished | best cost: -2.539673089981079, best pos: [ 2.72304774  3.70313912  1.7209193   4.14941968  3.32642929  3.91686907
+  2.92302233  3.15846331 17.69758193 64.14270408 16.49487627 45.80023058]
+2024-04-09 04:19:47,268 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:19:58,661 - global_best - INFO - Optimization finished | best cost: -2.7710766792297363, best pos: [ 3.88127556  3.69249309  1.48801137  2.89773323  2.51386717  2.48380185
+  1.90684194  4.06887203 16.98258256 64.31994182 14.05778844 49.74483384]
+2024-04-09 04:19:58,672 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:20:11,545 - global_best - INFO - Optimization finished | best cost: -2.831533908843994, best pos: [ 4.0668487   3.44506252  1.60861741  2.6765888   3.27402312  4.20006016
+  1.2566222   3.97324982 15.72456867 63.09532336 13.68083138 51.20603126]
+2024-04-09 04:20:11,562 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:20:26,523 - global_best - INFO - Optimization finished | best cost: -2.650545835494995, best pos: [ 3.93163628  4.13766311  1.42936409  2.76486223  2.37794335  2.67230123
+  2.05055186  4.99010311 55.17948905 64.1969476  13.92403734 10.25993924]
+2024-04-09 04:20:26,552 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 04:20:46,171 - global_best - INFO - Optimization finished | best cost: -2.6416397094726562, best pos: [ 2.35816304  3.28678881  1.02431405  1.02647203  2.09833183  3.89567717
+  1.75991099  3.80867272 59.91087891 64.7288046  15.39119686  9.79904965]
+2024-04-09 07:18:11,906 - tensorflow - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2024-04-09 07:18:17,202 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:18:28,050 - global_best - INFO - Optimization finished | best cost: -1.9401648044586182, best pos: [ 3.66122429  3.48963859  1.89964158  1.83641755  4.10163203  3.43160618
+  3.25404793  3.54149716 53.99912976 32.79634863  9.35171385 51.62956157]
+2024-04-09 07:18:28,055 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:18:38,569 - global_best - INFO - Optimization finished | best cost: -2.4098806381225586, best pos: [ 3.93334236  4.71394382  1.7830547   3.90681648  4.00391287  3.33104337
+  3.09994066  3.81615714 52.84566233 61.29863411 15.62876148  9.74787975]
+2024-04-09 07:18:38,577 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:18:48,933 - global_best - INFO - Optimization finished | best cost: -2.6960701942443848, best pos: [ 3.84289466  4.26051867  2.16731076  2.07608419  3.28001855  4.45194924
+  2.46109494  3.29219515 19.21808182 62.07974109 17.02191568 46.01665042]
+2024-04-09 07:18:48,939 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:18:59,720 - global_best - INFO - Optimization finished | best cost: -2.7429113388061523, best pos: [ 3.44815613  3.75790517  2.12578401  3.80539791  3.34160759  3.9937905
+  1.83202396  3.76684699 18.55337711 62.28751512 16.21388351 47.41840037]
+2024-04-09 07:18:59,725 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:19:10,332 - global_best - INFO - Optimization finished | best cost: -2.808147430419922, best pos: [ 4.17882561  3.33492923  1.43622766  1.88174454  2.69591836  2.26223297
+  1.34671051  4.12585232 14.83083041 64.23033215 13.63578151 52.68696075]
+2024-04-09 07:19:10,338 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:19:21,048 - global_best - INFO - Optimization finished | best cost: -2.7195143699645996, best pos: [ 3.05804377  3.88802218  1.70429124  2.96087147  2.34734106  2.94461666
+  2.72298169  4.3160603  18.32147205 63.91671382 15.60159311 45.74197151]
+2024-04-09 07:19:21,053 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:19:31,604 - global_best - INFO - Optimization finished | best cost: -2.7476892471313477, best pos: [ 3.23460538  3.7557449   1.26338367  3.09227208  1.76765713  4.36982084
+  1.71870391  4.00182029 19.99187378 64.33006911 12.78464109 46.83790024]
+2024-04-09 07:19:31,611 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:19:42,555 - global_best - INFO - Optimization finished | best cost: -2.7081046104431152, best pos: [ 3.03612691  4.04708724  1.73140967  2.94550124  3.18261102  1.72112737
+  2.69321754  4.3373436  15.80216046 66.09635079 13.91579117 49.61088436]
+2024-04-09 07:19:42,562 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:19:53,474 - global_best - INFO - Optimization finished | best cost: -2.82014799118042, best pos: [ 4.562235    3.44531202  1.67835757  2.42176799  3.41435043  1.91516496
+  1.38004354  3.87232684 14.40995582 64.01495072 13.9630066  52.27683867]
+2024-04-09 07:19:53,481 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:20:04,624 - global_best - INFO - Optimization finished | best cost: -2.8010072708129883, best pos: [ 3.40759808  3.40196873  1.33201937  3.19779479  3.18047313  2.99954439
+  1.45195481  4.6223946  14.50188809 64.65760532 13.07591663 52.26256032]
+2024-04-09 07:20:04,633 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:20:15,462 - global_best - INFO - Optimization finished | best cost: -2.805875301361084, best pos: [ 4.05160858  3.44363201  1.80435895  3.0580119   4.28101904  3.54016165
+  1.55816704  3.35644013 15.58507529 63.14552793 14.99214971 50.59891463]
+2024-04-09 07:20:15,469 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:20:26,694 - global_best - INFO - Optimization finished | best cost: -2.5596630573272705, best pos: [ 3.56478599  4.29937299  1.56884841  4.84685598  3.8000015   2.99894554
+  2.77767236  3.44651138 54.89398741 63.54998204 14.28917249 10.03581162]
+2024-04-09 07:20:26,702 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:20:37,774 - global_best - INFO - Optimization finished | best cost: -2.5703628063201904, best pos: [ 3.57179441  1.96243225  1.2457953   4.90128389  3.33891971  1.03441181
+  2.50006078  2.36246634 15.06252219 34.71481459 10.92717353 88.15471827]
+2024-04-09 07:20:37,782 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:20:48,965 - global_best - INFO - Optimization finished | best cost: -2.644604206085205, best pos: [ 3.66298158  3.80553487  1.9356525   3.19204994  3.6940325   1.99940524
+  2.15869557  3.6096944  18.58148586 63.96026486 14.24090807 48.40561865]
+2024-04-09 07:20:48,973 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:20:59,953 - global_best - INFO - Optimization finished | best cost: -2.794224262237549, best pos: [ 4.61796286  3.84011356  1.7873442   2.15145161  3.5563419   2.34885419
+  1.5439717   3.96407612 15.37495444 63.78779376 12.96113943 51.78856024]
+2024-04-09 07:20:59,963 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:21:11,448 - global_best - INFO - Optimization finished | best cost: -2.596935749053955, best pos: [ 2.937172    3.15105078  1.29403282  2.65451279  1.88153606  3.99500137
+  1.22693507  3.72393638 57.66202962 64.26553637 16.45000018 10.1581333 ]
+2024-04-09 07:21:11,456 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:21:22,510 - global_best - INFO - Optimization finished | best cost: -2.5685243606567383, best pos: [ 3.77979617  4.38953645  2.02610368  4.16472779  3.81530669  3.62097145
+  2.03471912  4.06184375 55.82900357 61.76130909 14.57767127  9.55564191]
+2024-04-09 07:21:22,518 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:21:34,085 - global_best - INFO - Optimization finished | best cost: -2.627877712249756, best pos: [ 2.88276361  1.59214227  1.5178352   3.78831018  3.2483919   1.01635264
+  1.97953569  3.98875482 16.0067549  36.23430693  6.92839102 90.28333546]
+2024-04-09 07:21:34,094 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:21:45,409 - global_best - INFO - Optimization finished | best cost: -2.6259453296661377, best pos: [ 1.89271785  3.07517177  1.36334289  2.97557079  2.32067217  2.97549254
+  1.17393045  2.46358015 58.93196308 65.29680505 16.02023778 11.58928158]
+2024-04-09 07:21:45,418 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:21:56,971 - global_best - INFO - Optimization finished | best cost: -2.7295260429382324, best pos: [ 2.33907678  3.82915847  1.00737157  1.5700281   1.63785075  2.7009212
+  1.98934262  4.14944702 61.67753178 63.18476398 17.08609833  7.7994345 ]
+2024-04-09 07:21:56,979 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:22:08,385 - global_best - INFO - Optimization finished | best cost: -2.773956775665283, best pos: [ 3.48563397  3.98992333  2.08544987  2.51718538  3.45632388  4.16074796
+  1.96274834  3.68430268 17.58496989 62.48851178 15.92469948 48.47301031]
+2024-04-09 07:22:08,396 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:22:20,152 - global_best - INFO - Optimization finished | best cost: -2.3566393852233887, best pos: [ 2.92258794  4.45189082  2.15784855  3.17097534  4.12648637  2.64917901
+  2.86073793  3.12901885 56.2390919  31.34686316  9.55076197 49.94105653]
+2024-04-09 07:22:20,162 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:22:31,725 - global_best - INFO - Optimization finished | best cost: -2.807061195373535, best pos: [ 4.16763772  3.56765877  2.00818777  2.59312931  4.14889429  3.92879182
+  1.59134516  3.33706267 16.29973582 62.46487374 15.43190915 50.02445339]
+2024-04-09 07:22:31,736 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:22:43,405 - global_best - INFO - Optimization finished | best cost: -2.7942745685577393, best pos: [ 3.61352468  3.77256722  1.98528124  2.56911245  3.48210391  4.10708673
+  1.86244167  3.94194289 16.1821697  62.53887964 15.33609596 49.18864216]
+2024-04-09 07:22:43,415 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:22:54,901 - global_best - INFO - Optimization finished | best cost: -2.6694936752319336, best pos: [ 1.89713682  2.86914442  1.12569778  3.09615233  2.33615806  2.36000958
+  1.16974065  1.81941514 59.76241292 65.79504224 15.31149723 11.51995463]
+2024-04-09 07:22:54,915 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:23:06,829 - global_best - INFO - Optimization finished | best cost: -2.8170597553253174, best pos: [ 4.59589081  3.59372377  1.98709549  2.3169892   3.64361277  3.77332183
+  1.55440107  3.76729857 15.45306711 61.92885103 16.00997902 49.99909876]
+2024-04-09 07:23:06,839 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:23:18,569 - global_best - INFO - Optimization finished | best cost: -2.802950859069824, best pos: [ 3.56935929  3.12025649  1.15837135  2.34306102  3.50166061  1.37244166
+  1.76620792  3.17507122 12.42013584 66.30891642 13.44709103 53.1375013 ]
+2024-04-09 07:23:18,579 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:23:30,635 - global_best - INFO - Optimization finished | best cost: -2.817434549331665, best pos: [ 3.86250218  3.8050193   1.88656872  2.42812338  3.15263944  4.3733309
+  1.75885883  4.04502795 17.12477644 62.32254274 14.82522424 48.93783748]
+2024-04-09 07:23:30,645 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:23:42,568 - global_best - INFO - Optimization finished | best cost: -2.612089157104492, best pos: [ 3.84605091  3.8119992   1.63107887  2.75974426  2.69267863  2.96176101
+  1.96742566  4.74391658 56.5260985  63.1369174  13.92338759  9.96948546]
+2024-04-09 07:23:42,578 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:23:54,621 - global_best - INFO - Optimization finished | best cost: -2.714056968688965, best pos: [ 2.5214219   4.21657968  2.00211711  4.27087555  3.24864564  2.82963998
+  2.50992542  4.07616333 17.36447347 65.11349216 15.02348742 48.03436115]
+2024-04-09 07:23:54,630 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:24:06,490 - global_best - INFO - Optimization finished | best cost: -2.7832014560699463, best pos: [ 3.03493858  3.36449238  1.85025531  3.53216755  3.81678882  3.77807511
+  1.56406736  4.10878612 16.47160758 63.47090336 15.19162053 50.2527952 ]
+2024-04-09 07:24:06,501 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:24:18,790 - global_best - INFO - Optimization finished | best cost: -2.799980640411377, best pos: [ 3.18323202  3.92626492  1.92411232  2.41277786  2.91327092  4.14335381
+  2.00199085  4.25876904 18.04433615 62.97056247 15.06665049 47.85670407]
+2024-04-09 07:24:18,801 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:24:30,934 - global_best - INFO - Optimization finished | best cost: -2.8331589698791504, best pos: [ 3.78192407  3.55509632  1.94106985  2.42371177  4.32317953  4.73058111
+  1.33470715  3.77743673 15.97267251 61.84529687 14.78994875 50.44174005]
+2024-04-09 07:24:30,945 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:24:43,399 - global_best - INFO - Optimization finished | best cost: -2.8193936347961426, best pos: [ 4.47651311  3.79181917  1.80661769  2.52919967  3.00193305  3.0370038
+  1.70308506  4.02901584 16.1708265  63.14947611 15.01638074 50.26397574]
+2024-04-09 07:24:43,410 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:24:55,747 - global_best - INFO - Optimization finished | best cost: -2.754396915435791, best pos: [ 4.1116791   3.74778736  2.10543081  2.90129791  4.13194956  3.218264
+  1.71538625  3.60926145 16.24375752 62.80529982 15.24268147 49.94975217]
+2024-04-09 07:24:55,758 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:25:08,224 - global_best - INFO - Optimization finished | best cost: -2.794801712036133, best pos: [ 4.28886082  3.84502895  2.00922967  1.92252054  4.07356142  3.33725271
+  1.66264526  3.67441357 15.16763315 62.63207608 14.74058857 50.6737202 ]
+2024-04-09 07:25:08,238 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:25:20,561 - global_best - INFO - Optimization finished | best cost: -2.658859968185425, best pos: [ 3.66187447  3.50302113  1.38889367  2.3085102   1.98744765  3.56365105
+  1.57087111  4.97050745 57.68532056 63.45773591 14.62872358  9.18401184]
+2024-04-09 07:25:20,575 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:25:33,204 - global_best - INFO - Optimization finished | best cost: -2.685067653656006, best pos: [ 3.02247185  4.19622344  1.87558906  3.3623539   2.58769758  2.35386402
+  2.98967622  3.68747622 17.55424141 64.96970428 17.02494288 46.40073607]
+2024-04-09 07:25:33,216 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:25:45,831 - global_best - INFO - Optimization finished | best cost: -2.8303632736206055, best pos: [ 4.81855423  3.38955547  1.67036234  2.97247453  4.66058028  3.10004836
+  1.4704179   2.35180128 13.39381584 63.82178494 15.66722599 51.84431776]
+2024-04-09 07:25:45,843 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:25:58,653 - global_best - INFO - Optimization finished | best cost: -2.853780746459961, best pos: [ 4.64470664  3.65360663  1.4792056   2.35452522  2.62414146  3.93314931
+  1.21209728  4.41183197 15.69448499 63.21962278 12.87913014 51.2562867 ]
+2024-04-09 07:25:58,665 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:26:11,277 - global_best - INFO - Optimization finished | best cost: -2.6024868488311768, best pos: [ 3.17012156  3.89169285  2.24286099  3.92767996  4.65053696  2.13921773
+  1.55558835  2.92789003 54.55629454 63.23063341 15.12130229 12.43137401]
+2024-04-09 07:26:11,289 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:26:24,171 - global_best - INFO - Optimization finished | best cost: -2.713829278945923, best pos: [ 4.10281102  4.93464705  2.77688123  3.35317012  4.5006846   3.75854602
+  2.69201822  4.55619029 15.14968027 63.63397675 15.74420013 47.91278661]
+2024-04-09 07:26:24,183 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:26:36,792 - global_best - INFO - Optimization finished | best cost: -2.7569239139556885, best pos: [ 4.43505985  4.68128048  2.39296275  3.95024941  4.29577537  4.75038588
+  2.07628793  4.49078196 14.59116775 64.34017764 13.76784297 48.86061609]
+2024-04-09 07:26:36,805 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:26:49,670 - global_best - INFO - Optimization finished | best cost: -2.696261405944824, best pos: [ 1.74279052  3.38647678  1.04883876  2.83560042  2.05674211  2.0254666
+  1.73796902  1.85012094 60.53341802 64.2680681  18.32260565  9.69444675]
+2024-04-09 07:26:49,683 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:27:02,422 - global_best - INFO - Optimization finished | best cost: -2.580018997192383, best pos: [ 4.81333088  3.88130345  2.32408727  1.42985609  2.36696069  3.42100597
+  1.8746116   4.77019404 58.33470455 59.1012106  18.49781299  5.16682946]
+2024-04-09 07:27:02,436 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:27:15,520 - global_best - INFO - Optimization finished | best cost: -2.633263111114502, best pos: [ 4.05775119  3.88525266  1.03722441  4.87373225  1.01641883  2.95568073
+  1.72375432  3.55191038 56.03265386 64.66948627 17.58677326  6.45508019]
+2024-04-09 07:27:15,533 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:27:28,427 - global_best - INFO - Optimization finished | best cost: -2.716662645339966, best pos: [ 1.5326561   3.02440246  1.02873929  1.48839664  2.62978743  2.30587757
+  1.89175109  2.32194878 60.59195314 66.63173688 13.92055815 13.13867883]
+2024-04-09 07:27:28,441 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:27:41,475 - global_best - INFO - Optimization finished | best cost: -2.818481922149658, best pos: [ 3.98665378  3.40726939  1.69446018  2.99967078  3.3620064   3.02955425
+  1.37008321  3.97772586 15.20615581 63.637045   15.07317409 51.36718497]
+2024-04-09 07:27:41,489 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:27:54,593 - global_best - INFO - Optimization finished | best cost: -2.7270193099975586, best pos: [ 2.34546152  2.76481944  1.10079706  1.88628367  3.34821536  1.05921735
+  1.95779182  1.20270751 58.00042901 68.02533726 13.52787225 13.82917177]
+2024-04-09 07:27:54,606 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:28:08,033 - global_best - INFO - Optimization finished | best cost: -2.8216452598571777, best pos: [ 4.61076001  3.45892014  1.71975176  2.91306847  4.73859707  3.67400603
+  1.46119053  2.98537467 14.40047457 63.21722262 14.76511758 51.43992774]
+2024-04-09 07:28:08,046 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:28:21,006 - global_best - INFO - Optimization finished | best cost: -2.829350471496582, best pos: [ 4.14209522  3.60060364  2.00862331  2.44088761  4.24331852  4.56964647
+  1.40024469  3.75348281 16.0755901  61.59630393 14.80852635 50.0405369 ]
+2024-04-09 07:28:21,019 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:28:34,445 - global_best - INFO - Optimization finished | best cost: -2.805504083633423, best pos: [ 4.86967004  3.33861049  2.03770781  3.45757235  4.53482051  3.74989708
+  1.42841364  1.89518071 15.19914527 62.32320319 18.5047122  49.61925584]
+2024-04-09 07:28:34,459 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:28:47,461 - global_best - INFO - Optimization finished | best cost: -2.7090718746185303, best pos: [ 1.82635295  3.44803584  1.05871587  3.10506256  2.23298582  1.06910708
+  1.70275113  2.25280299 59.10724129 65.15623598 16.71884043 11.16256637]
+2024-04-09 07:28:47,480 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:29:00,985 - global_best - INFO - Optimization finished | best cost: -2.841301441192627, best pos: [ 3.27192955  3.38574224  1.61027196  2.27517565  3.02422106  4.42208056
+  1.24588814  4.14153789 16.3975399  64.26347993 13.21768901 51.53010282]
+2024-04-09 07:29:00,998 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:29:14,262 - global_best - INFO - Optimization finished | best cost: -2.8142457008361816, best pos: [ 4.06109857  3.50836129  1.9397436   2.59520509  4.16294422  4.26928206
+  1.49073935  3.30518311 15.69401869 62.05972744 16.20692982 50.08340604]
+2024-04-09 07:29:14,277 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:29:27,784 - global_best - INFO - Optimization finished | best cost: -2.8455238342285156, best pos: [ 4.1142814   3.67267082  1.58328606  2.4282101   2.98637895  3.84578895
+  1.32129431  4.47314036 14.89186105 63.32016002 13.25284674 51.69270407]
+2024-04-09 07:29:27,799 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:29:41,064 - global_best - INFO - Optimization finished | best cost: -2.8007493019104004, best pos: [ 3.3692074   3.76804344  1.86352905  2.85440527  3.10529635  4.06640084
+  1.83184479  3.92815787 18.54212675 62.95769076 15.02361993 48.34684378]
+2024-04-09 07:29:41,079 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:29:54,838 - global_best - INFO - Optimization finished | best cost: -2.812328577041626, best pos: [ 3.77551122  4.03453103  1.81269042  2.34297583  2.28765166  4.45423667
+  1.95614785  4.42683692 18.2967363  62.53251177 14.70190527 46.6377683 ]
+2024-04-09 07:29:54,853 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:30:08,292 - global_best - INFO - Optimization finished | best cost: -2.8182427883148193, best pos: [ 4.20433296  4.03082385  1.74934322  2.07196337  2.2682026   4.00529216
+  1.72624197  4.66190315 18.30100353 62.77560078 14.62544645 48.11773799]
+2024-04-09 07:30:08,307 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:30:22,068 - global_best - INFO - Optimization finished | best cost: -2.7465195655822754, best pos: [ 2.75044198  4.35356032  2.23475069  4.88811421  4.06609936  2.89494219
+  2.23410323  3.94856471 16.47641409 65.12640956 14.87344601 49.61382789]
+2024-04-09 07:30:22,084 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:30:35,692 - global_best - INFO - Optimization finished | best cost: -2.8218560218811035, best pos: [ 3.99637274  3.34291313  1.71903706  3.0695035   4.15835269  3.94404795
+  1.34320318  3.41615401 15.51277379 62.82093804 14.96586259 50.92132065]
+2024-04-09 07:30:35,708 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:30:49,627 - global_best - INFO - Optimization finished | best cost: -2.820192337036133, best pos: [ 4.08819508  3.62254814  1.9878692   2.42649512  3.85218149  4.3931917
+  1.62547077  3.58082242 16.15168732 62.13042395 15.42735902 49.69135921]
+2024-04-09 07:30:49,653 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:31:03,111 - global_best - INFO - Optimization finished | best cost: -2.816582202911377, best pos: [ 4.59655231  3.82454721  1.96271982  2.32540665  3.05743042  3.51241421
+  1.77210871  3.95104619 16.99628346 62.09686068 16.25934068 48.86322393]
+2024-04-09 07:31:03,126 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:31:17,319 - global_best - INFO - Optimization finished | best cost: -2.829216480255127, best pos: [ 3.9129163   3.6713726   1.69642169  2.48268489  3.29016762  3.44660538
+  1.41871412  4.40409625 15.43629063 63.09417628 13.26457159 51.49383179]
+2024-04-09 07:31:17,335 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:31:31,138 - global_best - INFO - Optimization finished | best cost: -2.7632522583007812, best pos: [ 2.55412444  3.96210402  1.76572138  3.25005875  2.99062038  2.37423708
+  2.20926136  4.94078545 16.46254729 65.47031908 14.38135396 49.84550228]
+2024-04-09 07:31:31,155 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:31:45,212 - global_best - INFO - Optimization finished | best cost: -2.8099560737609863, best pos: [ 3.87982443  3.31387024  1.78378232  3.28932022  4.07128311  3.59626921
+  1.47374204  3.36025559 16.07278656 63.38028746 15.33428485 50.50361701]
+2024-04-09 07:31:45,229 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:31:58,940 - global_best - INFO - Optimization finished | best cost: -2.821133852005005, best pos: [ 4.23221709  3.79840822  1.65978637  2.60329281  2.47334178  3.48657712
+  1.61348589  4.54285572 17.75593205 63.31624971 14.63392328 49.15659722]
+2024-04-09 07:31:58,958 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:32:13,317 - global_best - INFO - Optimization finished | best cost: -2.8265984058380127, best pos: [ 4.27470345  3.56316068  2.00701615  2.4680692   3.77100721  4.52925578
+  1.35977351  4.06417588 15.67785908 61.51243029 14.90092407 50.08941932]
+2024-04-09 07:32:13,334 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:32:27,291 - global_best - INFO - Optimization finished | best cost: -2.8289332389831543, best pos: [ 3.16384964  3.46495768  1.7494341   3.0922951   3.40565434  4.70824242
+  1.49535593  4.13532456 16.92414059 62.8318709  13.89630773 49.51893921]
+2024-04-09 07:32:27,309 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:32:41,783 - global_best - INFO - Optimization finished | best cost: -2.825111150741577, best pos: [ 4.18564443  3.67579287  1.9971758   2.29769837  3.75969389  4.59802904
+  1.55808838  3.9668525  16.15106841 61.74952173 14.55368201 49.66110904]
+2024-04-09 07:32:41,801 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:32:55,969 - global_best - INFO - Optimization finished | best cost: -2.7087979316711426, best pos: [ 2.57101449  3.70616918  1.02012312  1.42058208  1.75867496  2.69124243
+  1.93628341  4.11271801 61.41241376 62.73749464 17.81045107  7.61999731]
+2024-04-09 07:32:55,990 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:33:10,373 - global_best - INFO - Optimization finished | best cost: -2.7326955795288086, best pos: [ 2.63754243  3.90888747  1.6513997   4.05073174  2.59117371  2.05298377
+  2.5937808   4.25228911 16.89451805 66.11172272 15.12813152 48.00940573]
+2024-04-09 07:33:10,391 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:33:24,526 - global_best - INFO - Optimization finished | best cost: -2.8320460319519043, best pos: [ 4.14201268  3.51603688  1.90322002  2.49324411  3.64084975  4.42411072
+  1.47538668  3.86666804 15.7171698  61.99110548 15.22401427 50.03208762]
+2024-04-09 07:33:24,545 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:33:39,242 - global_best - INFO - Optimization finished | best cost: -2.8030073642730713, best pos: [ 4.27265856  3.22252792  1.49210466  2.95395194  3.3810333   1.4483357
+  1.16451868  4.01812386 13.00112997 65.09158777 13.71802642 53.57605075]
+2024-04-09 07:33:39,260 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:33:53,634 - global_best - INFO - Optimization finished | best cost: -2.831071138381958, best pos: [ 4.21238046  3.6042235   1.77282162  2.53374259  3.33595075  3.34503899
+  1.52314104  4.18298614 15.58469031 62.90226985 14.43920339 50.76962898]
+2024-04-09 07:33:53,652 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:34:08,338 - global_best - INFO - Optimization finished | best cost: -2.73722505569458, best pos: [ 3.61400768  3.78347473  1.95875279  3.08262846  3.69696769  3.56012325
+  2.07184908  3.4120716  16.23263413 63.96104436 15.6400553  49.23383658]
+2024-04-09 07:34:08,362 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:34:22,864 - global_best - INFO - Optimization finished | best cost: -2.849259853363037, best pos: [ 4.43770876  3.38269633  1.45870946  2.54361789  2.83637123  4.23016824
+  1.06544501  3.77100052 15.86076621 63.4938385  13.11446158 51.47189054]
+2024-04-09 07:34:22,883 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:34:37,617 - global_best - INFO - Optimization finished | best cost: -2.576463222503662, best pos: [ 3.22484336  3.51833348  1.78660446  2.997605    3.9057626   3.16464237
+  1.46190921  2.16949121 17.93898993 64.08011727 15.97921675 49.97957225]
+2024-04-09 07:34:37,636 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:34:52,094 - global_best - INFO - Optimization finished | best cost: -2.7118449211120605, best pos: [ 2.23176702  3.78947587  1.03752     1.22760514  1.78221958  2.6296572
+  2.04453556  4.50003517 62.01909083 63.97001521 16.00326362  8.61553579]
+2024-04-09 07:34:52,113 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:35:06,996 - global_best - INFO - Optimization finished | best cost: -2.7044715881347656, best pos: [ 3.34173706  3.52746674  1.06336314  1.64190938  1.47883046  2.91490819
+  1.61490558  3.52642282 60.71534743 61.7841114  18.76182798  7.25729386]
+2024-04-09 07:35:07,016 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:35:21,728 - global_best - INFO - Optimization finished | best cost: -2.654902935028076, best pos: [ 3.08285971  3.53840261  1.21377401  2.76723721  1.48431074  4.37924497
+  1.92200733  3.82477047 59.02960221 65.09052247 15.51595146  7.88703252]
+2024-04-09 07:35:21,748 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:35:36,776 - global_best - INFO - Optimization finished | best cost: -2.8349626064300537, best pos: [ 3.03470544  3.41048351  1.58308144  2.26226394  2.85794078  4.44397924
+  1.24962279  4.40374697 16.45430894 64.62399653 13.1217037  51.57887603]
+2024-04-09 07:35:36,796 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:35:51,632 - global_best - INFO - Optimization finished | best cost: -2.845834732055664, best pos: [ 3.00293312  2.6718171   1.59842101  3.22739925  4.64868388  3.20862054
+  1.14950623  1.79391855 16.98351491 63.25305805 18.73456223 49.82385337]
+2024-04-09 07:35:51,652 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:36:06,701 - global_best - INFO - Optimization finished | best cost: -2.840285539627075, best pos: [ 4.28443977  3.65081285  1.70829345  2.30534932  3.20515624  3.36888761
+  1.42085958  4.37011101 15.14597751 62.90662819 13.89509566 51.42469084]
+2024-04-09 07:36:06,722 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:36:21,721 - global_best - INFO - Optimization finished | best cost: -2.8235208988189697, best pos: [ 4.72561503  3.72537534  1.78991224  2.34231013  4.58466696  3.52081836
+  1.5492806   3.33564953 13.89685676 62.97868635 14.49410196 51.48923382]
+2024-04-09 07:36:21,741 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:36:36,955 - global_best - INFO - Optimization finished | best cost: -2.79783034324646, best pos: [ 4.05879247  3.68012436  2.11539673  2.502225    4.04474141  4.1048726
+  1.64818459  3.42029862 16.13765595 62.0058372  16.10672651 49.57389191]
+2024-04-09 07:36:36,976 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:36:52,029 - global_best - INFO - Optimization finished | best cost: -2.8118021488189697, best pos: [ 4.0425111   3.79604822  1.8641683   2.20993403  3.53831485  2.85715444
+  1.57504567  4.40340953 14.97688805 62.91511779 13.82786349 51.34467741]
+2024-04-09 07:36:52,050 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:37:07,395 - global_best - INFO - Optimization finished | best cost: -2.8491828441619873, best pos: [ 4.97838694  3.10339234  1.38849158  2.91460628  4.69211559  3.68349697
+  1.21282464  1.77298258 13.58702837 63.34173613 16.49962973 51.9981889 ]
+2024-04-09 07:37:07,415 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:37:22,670 - global_best - INFO - Optimization finished | best cost: -2.8163304328918457, best pos: [ 4.49792915  4.06981211  1.75390666  2.12148128  2.54418697  2.86726322
+  1.73016422  4.57362709 17.76606454 63.2896652  14.84545263 49.6444578 ]
+2024-04-09 07:37:22,691 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:37:38,177 - global_best - INFO - Optimization finished | best cost: -2.753613233566284, best pos: [ 3.36593465  4.28280949  2.34790875  4.48930712  4.40042003  2.35898182
+  2.19467898  3.66239743 16.60349764 64.89395907 14.98266066 49.69895053]
+2024-04-09 07:37:38,198 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:37:53,419 - global_best - INFO - Optimization finished | best cost: -2.7953407764434814, best pos: [ 4.59675975  3.84899335  1.65307485  2.11820168  1.75141349  4.78637031
+  1.99075358  3.863433   16.82558471 62.53002848 14.90973634 45.68555687]
+2024-04-09 07:37:53,439 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:38:09,038 - global_best - INFO - Optimization finished | best cost: -2.839651584625244, best pos: [ 4.06686418  3.45464391  1.84984657  1.82937888  4.27494268  4.86582564
+  1.35202744  3.46549403 15.7968272  61.62676148 14.87999577 50.36120724]
+2024-04-09 07:38:09,062 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:38:24,422 - global_best - INFO - Optimization finished | best cost: -2.7431843280792236, best pos: [ 4.21744065  4.77724429  2.71252658  3.70456689  3.99064034  4.68347313
+  2.24072632  3.76704965 17.16928174 62.94206509 15.50303346 46.45214734]
+2024-04-09 07:38:24,444 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:38:40,235 - global_best - INFO - Optimization finished | best cost: -2.812671661376953, best pos: [ 4.84514027  3.43881966  1.65435696  2.89870397  4.49480893  2.90576517
+  1.58772473  2.80074624 13.94001072 64.07044587 14.70824651 51.56987965]
+2024-04-09 07:38:40,258 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:38:55,678 - global_best - INFO - Optimization finished | best cost: -2.838095188140869, best pos: [ 4.0159196   3.77732098  1.73484729  2.43432248  2.78469865  4.13325989
+  1.65441273  4.35172684 17.38893326 62.85605514 14.22658    49.15266052]
+2024-04-09 07:38:55,701 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:39:11,579 - global_best - INFO - Optimization finished | best cost: -2.8314876556396484, best pos: [ 3.88929568  3.63943238  1.66751351  2.53868086  3.17220751  4.2280638
+  1.41014845  4.15866323 15.77200248 62.96869496 13.62234086 50.70068417]
+2024-04-09 07:39:11,603 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:39:27,017 - global_best - INFO - Optimization finished | best cost: -2.809974193572998, best pos: [ 4.05983382  3.67579868  1.79603222  2.63733249  2.90374252  3.35558953
+  1.7197164   4.37533868 16.79169165 63.32479738 15.38943869 49.61613648]
+2024-04-09 07:39:27,043 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:39:42,917 - global_best - INFO - Optimization finished | best cost: -2.8267335891723633, best pos: [ 4.87517037  3.40116194  1.78068654  2.67175117  3.24108663  4.2634454
+  1.34596721  3.59724521 14.97289431 61.74913041 16.0458703  49.77465064]
+2024-04-09 07:39:42,941 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:39:58,625 - global_best - INFO - Optimization finished | best cost: -2.590639591217041, best pos: [ 2.18058622  2.91586182  1.11012134  3.41300599  2.38740264  3.0080515
+  1.26681781  3.808323   58.24431572 64.89530203 14.34406163 11.52693384]
+2024-04-09 07:39:58,648 - global_best - INFO - Optimize for 100 iters with {'c1': 0.5, 'c2': 0.3, 'w': 0.9}
+2024-04-09 07:40:14,670 - global_best - INFO - Optimization finished | best cost: -2.753410816192627, best pos: [ 3.20145841  3.82831051  1.93706848  3.27149414  3.27892507  2.48200162
+  2.14751212  4.24177912 16.00872102 64.7318499  15.44317304 49.60667785]
